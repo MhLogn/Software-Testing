@@ -22,22 +22,32 @@ Phương pháp kiểm thử hộp đen được áp dụng với hai kỹ thuậ
 
 Bảng dưới đây trình bày các ca kiểm thử (Test Cases) đã thiết kế và kết quả chạy thực tế trên chương trình.
 
-| Mã TC | Bài Toán | Dữ liệu đầu vào | Kết quả mong đợi (Expected) | Kết quả thực tế (Actual) | Đánh giá |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **TC1.1** | Chu vi HCN | `a = 5`, `b = 3` | `16.0` | `16.0` | ✅ **Pass** |
-| **TC1.2** | Chu vi HCN | `a = 0`, `b = 5` | Lỗi: Chiều dài và chiều rộng phải lớn hơn 0 | Lỗi: Chiều dài và chiều rộng phải lớn hơn 0 | ✅ **Pass** |
-| **TC2.1** | Diện tích HCN | `a = 5`, `b = 4` | `20.0` | `20.0` | ✅ **Pass** |
-| **TC2.2** | Diện tích HCN | `a = -2`, `b = 4` | Lỗi: Chiều dài và chiều rộng phải lớn hơn 0 | Lỗi: Chiều dài và chiều rộng phải lớn hơn 0 | ✅ **Pass** |
-| **TC3.1** | PT bậc 2 | `a = 1`, `b = -3`, `c = 2` | 2 nghiệm: `x1 = 2.0`, `x2 = 1.0` | 2 nghiệm: `x1 = 2.0`, `x2 = 1.0` | ✅ **Pass** |
-| **TC3.2** | PT bậc 2 | `a = 1`, `b = 1`, `c = 1` | Vô nghiệm | Vô nghiệm | ✅ **Pass** |
-| **TC3.3** | PT bậc 2 | `a = 0`, `b = 2`, `c = 3` | Lỗi: Phương trình bậc 2 yêu cầu hệ số a khác 0 | Lỗi: Phương trình bậc 2 yêu cầu hệ số a khác 0 | ✅ **Pass** |
-| **TC4.1** | Ngày của tháng | `month = 2`, `year = 2024` | `29` | `29` | ✅ **Pass** |
-| **TC4.2** | Ngày của tháng | `month = 13`, `year = 2023`| Lỗi: Tháng phải từ 1-12 và năm phải lớn hơn 0 | Lỗi: Tháng phải từ 1-12 và năm phải lớn hơn 0 | ✅ **Pass** |
-| **TC5.1** | Số nguyên tố | `n = 7` | Là số nguyên tố | Là số nguyên tố | ✅ **Pass** |
-| **TC5.2** | Số nguyên tố | `n = 1` | Lỗi: Số n phải lớn hơn 1 để kiểm tra nguyên tố | Lỗi: Số n phải lớn hơn 1 để kiểm tra nguyên tố | ✅ **Pass** |
-| **TC6.1** | Tổng đan dấu | `n = 5` | `3` | `3` | ✅ **Pass** |
-| **TC6.2** | Tổng đan dấu | `n = 0` | Lỗi: Tham số n yêu cầu là số nguyên dương | Lỗi: Tham số n yêu cầu là số nguyên dương | ✅ **Pass** |
-| **TC7.1** | UCLN | `a = 12`, `b = 4` | `4` | `4` | ✅ **Pass** |
-| **TC7.2** | UCLN | `a = 7`, `b = -3` | Lỗi: Cả a và b đều phải là số nguyên dương | Lỗi: Cả a và b đều phải là số nguyên dương | ✅ **Pass** |
-| **TC8.1** | Tổng giai thừa | `n = 3` | `9` | `9` | ✅ **Pass** |
-| **TC8.2** | Tổng giai thừa | `n = -2` | Lỗi: Tham số n yêu cầu là số nguyên dương | Lỗi: Tham số n yêu cầu là số nguyên dương | ✅ **Pass** |
+| Mã TC | Bài Toán | Mục đích / Kỹ thuật | Dữ liệu đầu vào (Input) | Kết quả mong đợi (Expected) | Kết quả thực tế (Actual) | Đánh giá |
+|:---|:---|:---|:---|:---|:---|:---|
+| **TC1.1** | 1. Chu vi HCN | Hợp lệ (Số nguyên) | `a = 5`, `b = 3` | `16.0` | `16.0` | ✅ Pass |
+| **TC1.2** | 1. Chu vi HCN | Hợp lệ (Số thập phân) | `a = 2.5`, `b = 3.5` | `12.0` | `12.0` | ✅ Pass |
+| **TC1.3** | 1. Chu vi HCN | Không hợp lệ (Biên 0) | `a = 0`, `b = 5` | Lỗi: Kích thước phải > 0 | `Loi: Chieu dai va chieu rong phai lon hon 0` | ✅ Pass |
+| **TC2.1** | 2. Diện tích HCN | Hợp lệ (Số nguyên) | `a = 5`, `b = 4` | `20.0` | `20.0` | ✅ Pass |
+| **TC2.2** | 2. Diện tích HCN | Hợp lệ (Số thập phân) | `a = 2.5`, `b = 3.5` | `8.75` | `8.75` | ✅ Pass |
+| **TC2.3** | 2. Diện tích HCN | Không hợp lệ (Số âm) | `a = 5`, `b = -3` | Lỗi: Kích thước phải > 0 | `Loi: Chieu dai va chieu rong phai lon hon 0` | ✅ Pass |
+| **TC3.1** | 3. PT bậc 2 | Hợp lệ (2 nghiệm phân biệt)| `a = 1`, `b = -3`, `c = 2` | `x1 = 2.0`, `x2 = 1.0` | `2 nghiem phan biet: x1 = 2.0, x2 = 1.0` | ✅ Pass |
+| **TC3.2** | 3. PT bậc 2 | Hợp lệ (Nghiệm kép) | `a = 1`, `b = -4`, `c = 4` | `Nghiệm kép x = 2.0` | `Nghiem kep x = 2.0` | ✅ Pass |
+| **TC3.3** | 3. PT bậc 2 | Hợp lệ (Vô nghiệm) | `a = 1`, `b = 1`, `c = 1` | Vô nghiệm | `Vo nghiem` | ✅ Pass |
+| **TC3.4** | 3. PT bậc 2 | Không hợp lệ (Hệ số a=0) | `a = 0`, `b = 2`, `c = 3` | Lỗi: Hệ số a khác 0 | `Loi: Phuong trinh bac 2 yeu cau he so a khac 0`| ✅ Pass |
+| **TC4.1** | 4. Ngày của tháng| Hợp lệ (Tháng 2 năm nhuận)| `month = 2`, `year = 2024`| `29` | `29` | ✅ Pass |
+| **TC4.2** | 4. Ngày của tháng| Hợp lệ (Tháng 2 ko nhuận) | `month = 2`, `year = 2023`| `28` | `28` | ✅ Pass |
+| **TC4.3** | 4. Ngày của tháng| Hợp lệ (Tháng có 31 ngày) | `month = 10`, `year = 2023`| `31` | `31` | ✅ Pass |
+| **TC4.4** | 4. Ngày của tháng| Không hợp lệ (Tháng sai) | `month = 13`, `year = 2023`| Lỗi: Tháng từ 1-12 | `Loi: Thang phai tu 1-12 va nam phai lon hon 0` | ✅ Pass |
+| **TC5.1** | 5. Số nguyên tố | Hợp lệ (Là SNT) | `n = 7` | `true` | `true` | ✅ Pass |
+| **TC5.2** | 5. Số nguyên tố | Hợp lệ (Không là SNT) | `n = 10` | `false` | `false` | ✅ Pass |
+| **TC5.3** | 5. Số nguyên tố | Hợp lệ (Biên SNT nhỏ nhất)| `n = 2` | `true` | `true` | ✅ Pass |
+| **TC5.4** | 5. Số nguyên tố | Không hợp lệ (Biên n=1) | `n = 1` | Lỗi: n phải lớn hơn 1 | `Loi: So n phai lon hon 1 de kiem tra nguyen to`| ✅ Pass |
+| **TC6.1** | 6. Tổng đan dấu | Hợp lệ (n chẵn) | `n = 4` | `-2` | `-2` | ✅ Pass |
+| **TC6.2** | 6. Tổng đan dấu | Hợp lệ (n lẻ) | `n = 5` | `3` | `3` | ✅ Pass |
+| **TC6.3** | 6. Tổng đan dấu | Không hợp lệ (n < 1) | `n = 0` | Lỗi: n là số nguyên dương| `Loi: Tham so n yeu cau la so nguyen duong` | ✅ Pass |
+| **TC7.1** | 7. Tìm UCLN | Hợp lệ (Cùng chia hết) | `a = 12`, `b = 4` | `4` | `4` | ✅ Pass |
+| **TC7.2** | 7. Tìm UCLN | Hợp lệ (Nguyên tố cùng nhau)| `a = 7`, `b = 3` | `1` | `1` | ✅ Pass |
+| **TC7.3** | 7. Tìm UCLN | Không hợp lệ (Số âm) | `a = 7`, `b = -3` | Lỗi: a,b là nguyên dương | `Loi: Ca a va b deu phai la so nguyen duong` | ✅ Pass |
+| **TC8.1** | 8. Tổng giai thừa| Hợp lệ (Tính bình thường)| `n = 3` | `9` (1! + 2! + 3!) | `9` | ✅ Pass |
+| **TC8.2** | 8. Tổng giai thừa| Không hợp lệ (Số âm) | `n = -2` | Lỗi: n là số nguyên dương| `Loi: Tham so n yeu cau la so nguyen duong` | ✅ Pass |
+| **TC8.3** | 8. Tổng giai thừa| Ngoại lệ (Tràn bộ nhớ) | `n = 21` | Lỗi: Vượt quá giới hạn | `Loi: n qua lon, vuot gioi han bo nho...` | ✅ Pass |
