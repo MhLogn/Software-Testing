@@ -2,21 +2,21 @@ public class MathOperations {
 
     public static double calculateRectanglePerimeter(double a, double b) {
         if (a <= 0 || b <= 0) {
-            throw new IllegalArgumentException("Kích thước không hợp lệ");
+            throw new IllegalArgumentException("Lỗi: Chiều dài và chiều rộng phải lớn hơn 0");
         }
         return 2 * (a + b);
     }
 
     public static double calculateRectangleArea(double a, double b) {
         if (a <= 0 || b <= 0) {
-            throw new IllegalArgumentException("Kích thước không hợp lệ");
+            throw new IllegalArgumentException("Lỗi: Chiều dài và chiều rộng phải lớn hơn 0");
         }
         return a * b;
     }
 
     public static String solveQuadratic(double a, double b, double c) {
         if (a == 0) {
-            throw new IllegalArgumentException("Hệ số a phải khác 0");
+            throw new IllegalArgumentException("Lỗi: Phương trình bậc 2 yêu cầu hệ số a khác 0");
         }
         double delta = b * b - 4 * a * c;
         if (delta < 0) {
@@ -32,7 +32,7 @@ public class MathOperations {
 
     public static int getDaysInMonth(int month, int year) {
         if (month < 1 || month > 12 || year < 1) {
-            throw new IllegalArgumentException("Tháng hoặc năm không hợp lệ");
+            throw new IllegalArgumentException("Lỗi: Tháng phải từ 1-12 và năm phải lớn hơn 0");
         }
         switch (month) {
             case 4: case 6: case 9: case 11:
@@ -49,7 +49,7 @@ public class MathOperations {
 
     public static boolean isPrime(int n) {
         if (n <= 1) {
-            throw new IllegalArgumentException("Dữ liệu không hợp lệ");
+            throw new IllegalArgumentException("Lỗi: Số n phải lớn hơn 1 để kiểm tra nguyên tố");
         }
         for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
@@ -61,7 +61,7 @@ public class MathOperations {
 
     public static int calculateAlternatingSum(int n) {
         if (n <= 0) {
-            throw new IllegalArgumentException("n phải là số nguyên dương");
+            throw new IllegalArgumentException("Lỗi: Tham số n yêu cầu là số nguyên dương");
         }
         int sum = 0;
         for (int i = 1; i <= n; i++) {
@@ -76,7 +76,7 @@ public class MathOperations {
 
     public static int findGCD(int a, int b) {
         if (a <= 0 || b <= 0) {
-            throw new IllegalArgumentException("a và b phải là số nguyên dương");
+            throw new IllegalArgumentException("Lỗi: Cả a và b đều phải là số nguyên dương");
         }
         while (b != 0) {
             int temp = b;
@@ -88,7 +88,7 @@ public class MathOperations {
 
     public static long factorial(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("n không được âm");
+            throw new IllegalArgumentException("Lỗi: Không thể tính giai thừa cho số âm");
         }
         long fact = 1;
         for (int i = 1; i <= n; i++) {
@@ -99,7 +99,7 @@ public class MathOperations {
 
     public static long calculateFactorialSum(int n) {
         if (n <= 0) {
-            throw new IllegalArgumentException("n phải là số nguyên dương");
+            throw new IllegalArgumentException("Lỗi: Tham số n yêu cầu là số nguyên dương");
         }
         long sum = 0;
         for (int i = 1; i <= n; i++) {
